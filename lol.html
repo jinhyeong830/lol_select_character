@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lol캐릭터 선택창 만들기</title>
+    <style>
+/*할 것: 백그라운드 사진
+캐릭터 사진 넣기 - 사진 잘안들어가면
+hover, active 시 꼭지점에만 aim? 생기는 것 처리하기
+active 시 사진필터 흑백으로 바꾸기,,
+imag 두번 넣어줘야 ㅏㄹ까여??에 넣고 border*/
+        body{
+            
+        }
+        .container{
+            
+            display: flex;
+            max-width:800px;
+            flex-wrap:wrap;
+            justify-content: center;
+            padding:40px 20px;
+            background-color: silver;
+            margin:auto;
+
+
+        }
+        .container .wrap{
+            
+            text-align: center;
+            font-size:13px;
+ 
+         }
+        .container .blackbox{
+            width:84px;
+            height: 84px;
+            box-sizing: border-box;
+            background-color: black;
+            margin:9px 22px;
+            position:relative;
+        }
+        .container .blackbox>.gr_line{
+            position:relative;
+            top:2px;
+            left:2px;
+            width:80px;
+            height: 80px;
+            border:0.5px solid gray;
+            box-sizing: border-box;
+        }
+
+        .container .blackbox>.gr_line>.image{
+            width:76px;
+            height:76px;
+            /*border:1px solid rgb(97, 48, 48);
+            box-sizing: border-box;/*border랑 box-sizing은 나중에 사진 들어가면 지우기*/
+            position:relative;
+            top:1.5px;
+            left:1.5px;/*border가 안쪽으로 1px, (80-76-1)/2라서 1.5씩*/
+            
+
+        }
+
+        /*hover와 active*/
+        .container .blackbox>.gr_line:hover{
+            box-sizing: content-box;
+            border:1.5px solid goldenrod;
+            border-image: linear-gradient(to top, goldenrod, rgb(253, 255, 209));
+            border-image-slice: 1;
+
+            position:absolute;
+            top:0.5px;
+            left:0.5px;
+        }
+        
+        .container .blackbox>.gr_line:active{
+            border:0.5px solid black;
+            width:86px;
+            height: 86px;
+            border-radius: 50%;
+            background-image: linear-gradient(to top, rgb(249, 250, 222), goldenrod);
+            box-sizing: border-box;
+            position:absolute;
+            top:-1px;
+            left:-1px;
+
+
+            margin: auto;
+            
+
+           
+        }
+    </style>
+</head>
+<body>
+
+   
+    <div class="container">
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            무작위
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            가렌
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            갈리오
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            갱플랭크
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            그라가스
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            그레이브즈
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            그웬
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            나르
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            나미
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            나서스
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            노틸러스
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            녹턴
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            누누와 윌럼프
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            니달리
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            니코
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            다리우스
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            다이애나
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            드레이븐
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            라이즈
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            라칸
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            람머스
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            럭스
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            럼블
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+            레타나 글라스크
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="blackbox">
+                <div class="gr_line">
+                    <div class="imag"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
