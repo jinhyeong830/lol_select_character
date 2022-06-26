@@ -56,17 +56,29 @@ hover, active 시 꼭지점에만 aim? 생기는 것 처리하기
     right: 3.5px;
 }
 
-/*hover와 active*/
+/*hover*/
+
+.container .wrap .blackbox .gr_line:hover{
+    box-sizing: content-box;
+    border:1.5px solid transparent;
+    border-image: linear-gradient(to top, goldenrod, rgb(253, 255, 209));
+    border-image-slice: 1;
+   position:absolute;
+    top:0.5px;
+    left:0.5px;
+
+}
+/*active*/
+/*active 시 hover 효과 없애줘야??*/
 
 
-    /* imag */
+    /* imag filter*/
 .blackbox .gr_line .imag:active{
     filter: grayscale(100%);
 }
 
- /*imag2*/
+    /* circle gold*/
 
-   /* class=circle */
 .circle:active{
     border:2px solid gold;
     width:88px;
