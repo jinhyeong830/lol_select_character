@@ -1,14 +1,10 @@
 /*할 것: 백그라운드 사진
-캐릭터 사진 넣기 - 사진 잘안들어가면
+동그라미 색깔 필터 안먹게 처리
 hover, active 시 꼭지점에만 aim? 생기는 것 처리하기
-active 시 사진필터 흑백으로 바꾸기,,
+
 imag 두번 넣어줘야 ㅏㄹ까여??에 넣고 border*/
-/* css 파일이랑 html나눠주기*/
-body{
-            
-}
+
 .container{
-    
     display: flex;
     max-width:800px;
     flex-wrap:wrap;
@@ -16,14 +12,10 @@ body{
     padding:40px 20px;
     background-color: silver;
     margin:auto;
-
-
 }
 .container .wrap{
-    
     text-align: center;
     font-size:13px;
-
  }
 .container .blackbox{
     width:84px;
@@ -43,12 +35,6 @@ body{
     box-sizing: border-box;
 }
 
-
-
-
-
-
-/*사진 넣기*/
 .container>.wrap>.blackbox>.gr_line>.imag{
     width:100%;
     height:100%;
@@ -56,15 +42,104 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     position:relative;
-    /*//border가 안쪽으로 1px, (80-76-1)/2라서 1.5씩*/
-    
-
 }
 
-.container>.wrap>.blackbox>.gr_line>.imag>.circle{
+
+
+/*circle image 형제라면*/
+.circle{
     width:86px;
     height: 86px;
+    
+    position:absolute;
+    top:0px;
+    left: 0px;
+
 }
+
+/*hover와 active*/
+.container .blackbox>.gr_line:hover{
+    box-sizing: content-box;
+    border:1.5px solid transparent;
+    border-image: linear-gradient(to top, goldenrod, rgb(253, 255, 209));
+    border-image-slice: 1;
+    position:absolute;
+    top:0.5px;
+    left:0.5px;
+}
+
+    /* imag */
+.gr_line>*:not(.circle):active{
+    filter: grayscale(100%);
+    
+    
+
+
+
+}
+
+   /* class=circle */
+.gr_line:nth-child(2){
+    border:2px solid gold !important;
+    width:88px;
+    height: 88px;
+    border-radius: 50%;
+    filter:none ;
+    box-sizing: border-box;
+    position:absolute;
+    top:0px;
+    left: 0px;
+    
+}
+
+
+
+/*원래 코드-circle이 iamg의 자식일 때
+.container>.wrap>.blackbox>.gr_line>.imag>.circle:active{
+    z-index: 1;
+    border:2px solid gold;
+    width:88px;
+    height: 88px;
+    border-radius: 50%;
+    filter:none !important;
+    box-sizing: border-box;
+    position:relative;
+    /*원 이동시켜야 댜
+    bottom:4px;
+    right:4px;
+    z-index:1;
+    
+    
+}*/
+
+/*imag와 circle 형제일 때*/
+.container>.wrap>.blackbox>.gr_line>.circle:active{
+    
+    border:2px solid gold !important;
+    width:88px;
+    height: 88px;
+    border-radius: 50%;
+    filter:none ;
+    box-sizing: border-box;
+    position:absolute;
+    top:0px;
+    left: 0px;
+    
+    
+    
+}
+
+/*질문:
+이미지 클릭시 위에 덮어지는 원에 그라데이션 효과가 들어가 있어서 
+border에 그라데이션 넣는 효과를 찾아봤더니 제가 찾아본 모든 페이지에서
+border을 투명하게 설정해놓고 안에 그라데이션 배경을 주고 그 위를 컨텐트로 덮는 방법으로 하라고 되어있었습니다!
+
+그런데 투명한 원(??) 뒤의 원래 사진의 모서리까지 보이게 하고 싶으면 
+이미지 안에 원안에 이미지를 다시 넣는 방법밖을 생각해봤는데 
+그렇게 되면 뒤 배경이랑 불일치가 일어날 것 같아서욧..
+저의 접근 방법이 올바른걸까요??*/
+
+
 
 .container>.wrap:nth-child(1) .imag{
     background-image: url(./champions/01.png);
@@ -157,45 +232,3 @@ body{
     background-image: url(./champions/30.png);
 }
 
-/*hover와 active*/
-.container .blackbox>.gr_line:hover{
-    box-sizing: content-box;
-    border:1.5px solid goldenrod;
-    border-image: linear-gradient(to top, goldenrod, rgb(253, 255, 209));
-    border-image-slice: 1;
-
-    position:absolute;
-    top:0.5px;
-    left:0.5px;
-}
-.container .blackbox>.gr_line:active{
-    position:relative;
-    top:2px;
-    left:2px;
-    width:80px;
-    height: 80px;
-    border:none;
-    box-sizing: border-box;
-}
-
-
-.container>.wrap>.blackbox>.gr_line>.imag>.circle:active{
-    border:1.5px solid gold;
-    width:86px;
-    height: 86px;
-    border-radius: 50%;
-   
-    box-sizing: border-box;
-    position:absolute;
-    
-    margin: auto;
-}
-/*질문:
-이미지 클릭시 위에 덮어지는 원에 그라데이션 효과가 들어가 있어서 
-border에 그라데이션 넣는 효과를 찾아봤더니 제가 찾아본 모든 페이지에서
-border을 투명하게 설정해놓고 안에 그라데이션 배경을 주고 그 위를 컨텐트로 덮는 방법으로 하라고 되어있었습니다!
-
-그런데 투명한 원(??) 뒤의 원래 사진의 모서리까지 보이게 하고 싶으면 
-이미지 안에 원안에 이미지를 다시 넣는 방법밖을 생각해봤는데 
-그렇게 되면 뒤 배경이랑 불일치가 일어날 것 같아서욧..
-저의 접근 방법이 올바른걸까요??*/
