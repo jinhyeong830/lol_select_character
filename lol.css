@@ -66,6 +66,7 @@ hover, active 시 꼭지점에만 aim? 생기는 것 처리하기
     position:absolute;
     top:0.5px;
     left:0.5px;
+    
 
 }
 /*active*/
@@ -76,31 +77,26 @@ hover, active 시 꼭지점에만 aim? 생기는 것 처리하기
     position:absolute;
     top:1.5px;
     left:2px;
-    
-    
+    filter: grayscale(90%);
 }
 
 
-    /* imag filter*/
-.blackbox .gr_line .imag:active{
-    filter: grayscale(100%);
-    
-}
+
 
     /* circle gold*/
 
 .circle:active{
-    border:2px solid gold;
+    z-index: 1;
+    border:2px solid white;
     width:88px;
     height: 88px;
     border-radius: 50%;
-    filter:none ;
     box-sizing: border-box;
     position:relative;
     bottom:84px;
     right: 4px;
-    
 }
+
 
 
 
@@ -209,4 +205,21 @@ border을 투명하게 설정해놓고 안에 그라데이션 배경을 주고 �
 .container>.wrap:nth-child(30) .imag{
     background-image: url(./champions/30.png);
 }
+.container>.wrap:nth-child(30) .imag2{
+    background-image: url(./champions/30.png);
+}
 
+.test{
+    width:100px;
+    height:100px;
+    border: 1px solid black;
+    background-color: red;
+    visibility: visible;
+}
+.test:active{
+    visibility: hidden;
+    width:100px;
+    height:100px;
+    border: 1px solid black;
+    background-color: red;
+}
